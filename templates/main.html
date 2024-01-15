@@ -1,11 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Prep.com</title>
+    <link rel="icon" type="x-icon" href="images/Logo.svg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="UTF-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" charset="UTF-8"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="/Patshaala/public/main.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/normalize.css">
+  </head>
+  <body>
+
+    <!-- Hero section to introduce the website  -->
+    <section class="blocks block-gradient curve">
+      <div class="hero-content container">
+
+        <!-- Navigation bar -->
+        <nav class="nav collapsible collapsible-expanded">
+          <a href="index.html"><img class="logo" src="images/TextLogo.svg" alt="Image of the websites logo" srcset=""></a>
+          <div class="toggle"><i class="fa-solid fa-bars-staggered"></i></div>
+          <ul class="list nav-list collapsible-content">
+            <li class="nav-item current"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="links/about.html">About Us</a></li>
+            <li class="nav-item"><a href="links/programs.html">Be a Tutor</a></li>
+            <li class="nav-item"><a href="#streaks.html">
+              <img src="/Patshaala/assets/flame.png" class="streak" alt="">
+            </a></li>
+            <li class="nav-item"><a href="links/features.html">Profile</a></li>
+          </ul>
+          <a href="links/form.html" class="nav-button collapsible-content">
+            <button class="btn btn-accent btn-callout">Login</button>
+          </a>
+        </nav>
+        <div class="mainContainer">
+        <div>
+        <!-- Hero content area and banner-->
+        <h1 class="hero-title">Pathshaala</h1>
+        <!--Changes the image depending on the screen size-->
+        <svg class="icon icon--white satellite">
+          <use href="images/sprite.svg#satellite"></use>
+        </svg>
+        <svg class="icon icon--white craft">
+          <use href="images/sprite.svg#craft"></use>
+        </svg>
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/hero-image.png">
+          <img class="banner-image" src="" alt="">
+        </picture>
+        <svg class="icon icon--white astroid">
+            <use href="images/sprite.svg#white-astroid"></use>
+        </svg>
+        <svg class="icon icon--white astronaut">
+          <use href="images/sprite.svg#astronaut"></use>
+        </svg>
+        <p class="hero-subtitle">
+          <span >Aao Sath Padhe</span>
+        </p>
+        <svg class="icon icon--white star">
+          <use href="images/sprite.svg#star"></use>
+        </svg>
+        <a href="links/form.html"><button class="btn btn-accent">Get Started</button></a>
+
+        <!-- Social media contacts-->
+        <ul class="hero-contacts">
+      <a href="#">
+        <li>Facebook</li>
+      </a>
+      <a href="#">
+        <li>Twitter</li>
+      </a>
+      <a href="#">
+        <li>LinkedIn</li>
+      </a>
+      <a href="#">
+        <li>WhatsApp</li>
+      </a>
+        </ul>
+      </div>
+      <img src="/Patshaala/assets/anim-1-1.gif" alt="">
+    </div>
+      </div>
+      <!-- Curved decoration of the hero section -->
+      <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+        <path fill="#fff" fill-opacity="1"
+          d="M0,128L60,154.7C120,181,240,235,360,224C480,213,600,139,720,128C840,117,960,171,1080,165.3C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+        </path>
+      </svg>
+    </section>
+    <!-- Search Section-->
+    <section class="web-content search-section">
+      <div class="search">
+        <input type="text" placeholder="search" />
+        <div class="symbol">
+          <svg class="cloud">
+            <use xlink:href="#cloud" />
+          </svg>
+          <svg class="lens">
+            <use xlink:href="#lens" />
+          </svg>
+        </div>
+      </div>
+        
+      <!-- SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="cloud">
+          <path d="M31.714,25.543c3.335-2.17,4.27-6.612,2.084-9.922c-1.247-1.884-3.31-3.077-5.575-3.223h-0.021
+        C27.148,6.68,21.624,2.89,15.862,3.931c-3.308,0.597-6.134,2.715-7.618,5.708c-4.763,0.2-8.46,4.194-8.257,8.919
+        c0.202,4.726,4.227,8.392,8.991,8.192h4.873h13.934C27.784,26.751,30.252,26.54,31.714,25.543z" />
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="lens">
+          <path d="M15.656,13.692l-3.257-3.229c2.087-3.079,1.261-7.252-1.845-9.321c-3.106-2.068-7.315-1.25-9.402,1.83
+        s-1.261,7.252,1.845,9.32c1.123,0.748,2.446,1.146,3.799,1.142c1.273-0.016,2.515-0.39,3.583-1.076l3.257,3.229
+        c0.531,0.541,1.404,0.553,1.95,0.025c0.009-0.008,0.018-0.017,0.026-0.025C16.112,15.059,16.131,14.242,15.656,13.692z M2.845,6.631
+        c0.023-2.188,1.832-3.942,4.039-3.918c2.206,0.024,3.976,1.816,3.951,4.004c-0.023,2.171-1.805,3.918-3.995,3.918
+        C4.622,10.623,2.833,8.831,2.845,6.631L2.845,6.631z" />
+        </symbol>
+      </svg>  
+          
+      
+    </section>
+
+    <!-- The Features section which describes the services we provide summarized -->
+    <section class="feature-section">
+
+      <!-- Small header tag -->
+      <div class="tag">
+        <span class="tag-title">Features</span>
+      </div>
+
+      <!-- Carousel -->
+      <div class="features owl-carousel container">
+
+        <!--Online Library-->
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+          <div class="feature-body">
+            <h2 class="feature-header">Peer Learning Challenges</h2>
+            <p>Elevate learning with platform activities, quizzes, and tutor feedback for dynamic, collaborative, and competitive engagement.</p>
+          </div>
+        </div>
+        
+        <!--Free-->
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <div class="feature-body">
+            <h2 class="feature-header">Project Mentorship</h2>
+            <p>College project repository with GitHub links and paid mentorship opportunities for students.</p>
+          </div>
+        </div>
+        
+        <!--Download-->
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div class="feature-body">
+            <h2 class="feature-header">Learning Streak Rewards</h2>
+            <p>Platform boosts consistency with learning streaks, rewarding users with coupons for paid classes.</p>
+          </div>
+        </div>
+
+        <!--Test-papers-->
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fa-brands fa-rocketchat"></i>
+          </div>
+          <div class="feature-body">
+            <h2 class="feature-header">Integrated Peer Chat System</h2>
+            <p>Chat system for peer students to discuss on various topics , students can
+              share their notes as well here</p>
+          </div>
+        </div>
+
+        <!--updates-->
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fa-solid fa-file-circle-plus"></i>
+          </div>
+          <div class="feature-body">
+            <h2 class="feature-header">Deep Learning Prioritization</h2>
+            <p>Platform employs deep learning to curate key questions from past papers, enhancing exam preparation.</p>
+          </div>
+        </div>
+
+        <!--User-->
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fa-solid fa-note-sticky"></i>
+          </div>
+          <div class="feature-body">
+            <h2 class="feature-header">Solved Past Year Papers</h2>
+            <p>Website offers solved past-year papers by colleges, a valuable resource for exam preparation and reference.</p>
+          </div>
+        </div>
+
+      </div>
+  
+    </section>
+
+    <!-- Challenges section -->
+    <section class="challenges_section">
+       <h2>Peer Learning Challenges</h2>
+       <button class="button-85" role="button">Explore</button>
+    </section>
+
+    <section class="web-content">
+      <div class="blocks container">
+        <h2>Why we consider ourselves the best</h2>
+        <div class="guarantee grid grid-1x2">
+          <img  src="images/Guarantee.svg" alt="">
+          <div class="guarantee-content">
+              <h3 class="quote"><span class="quote quote-text">You can only become truly accomplished at something you love</span> - Maya Angelou</h3>
+            <p>We love our work, and for that we provide you with the best services to keep you satisfied.</p>
+            <a href="links/guarentee.html"><button class="btn btn-accent">Learn More</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonial section -->
+    <section class="testimonial">
+      <div class="container">
+        <div class="title-sec">
+          <h2>Our Testimonial</h2>
+          <p>What clients say about us?</p>
+        </div>
+        <div class="testimonial-content owl-carousel">
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur, mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?</p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/man.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Callout section -->
+    <div class="callout callout-accent container">
+      <div class="grid grid-1x2">
+        <div class="callout-content">
+          <h2 class="callout-heading">Ready To Get Started?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque in architecto saepe assumenda quod
+            magnam!</p>
+        </div>
+        <a href="links/form.html">
+          <button class="btn btn-callout btn-stretch">Get Started</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- footer section -->
+    <footer class="blocks block-dark">
+      <div class="container grid footer-sections">
     
-</body>
+        <!--Footer contact us-->
+        <section class="footer-contact">
+          <h2 id="contact" class="footer-title">Contact us</h2>
+          <input class="footer-input" type="text" placeholder="Enter Your Name">
+          <input class="footer-input" type="email" placeholder="Enter Your Email Address">
+          <textarea class="footer-input" cols="10" rows="5" placeholder="Write Your Message..."></textarea>
+          <a href="#"><button class="btn btn-contact btn-block">Send</button></a>
+        </section>
+    
+        <!--Footer links-->
+        <section class="footer-links">
+          <ul class="list list-footer">
+            <a href="#">
+              <li>Terms & Conditions</li>
+            </a>
+            <a href="#">
+              <li>Developers</li>
+            </a>
+            <a href="#">
+              <li>Company</li>
+            </a>
+            <a href="#">
+              <li>Security</li>
+            </a>
+            <a href="#">
+              <li>Support</li>
+            </a>
+            <a href="#">
+              <li>Legal</li>
+            </a>
+            <a href="#">
+              <li>App</li>
+            </a>
+          </ul>
+        </section>
+    
+        <!--Footer developer brand-->
+        <section class="footer-brand">
+          
+          <a href="#">
+            <img class="footer-image" src="images/code.png" alt="Logo of company">
+          </a>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum voluptas inventore laborum asperiores aperiam
+            placeat ab libero ducimus excepturi? Eius!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quasi id dicta, explicabo ab suscipit!</p>
+          <div class="contact-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#"><i class="fa-solid fa-phone"></i></a>
+            <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </section>
+      </div>
+      <section>
+        <p class="copyright">All rights reserved by <b>Govan Studio</b> 2023 (Pty) Ltd</p>
+      </section>
+    </footer>
+
+    <!-- JavaScript files and links -->
+    <script>
+  $('.features').owlCarousel({
+    margin:30,
+    loop:true,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
+    responsive:{
+      0:{
+        items:1
+      },
+      1000:{
+        items:2
+      },
+      1600: {
+        items:3
+      }
+    }
+  });
+
+  $('.testimonial-content').owlCarousel({
+      margin: 30,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        1000: {
+          items: 2
+        },
+        1600: {
+          items: 2
+        }
+      }
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/6f879d6c21.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  </body>
 </html>
