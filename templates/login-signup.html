@@ -10,19 +10,21 @@
     <h2>Patshaala</h2>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="/register" method="POST">
+        <form id="signup-form">
           <h1>Sign up</h1>
           <input type="text" name="username" placeholder="Username" />
           <input type="email" name="email" placeholder="Email" />
-          <input type="number" name="phone" placeholder="Phone Number" />
-          <input type="text" name="college" placeholder="College Name" />
+          <input type="number" name="phone" placeholder="Phone Number" />     
+          <input type="text" name="college" id="collegeInput" placeholder="College Name" />
+          
+          <div id="suggestionContainer"></div>
           <input type="password" name="password" placeholder="Password" />
           <button type="submit">Sign Up</button>
        </form>       
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="/login" method="POST">
+        <form id="login-form">
           <input type="email" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password" />
           <button type="submit">Sign In</button>
@@ -60,5 +62,39 @@
     signInButton.addEventListener("click", () => {
       container.classList.remove("right-panel-active");
     });
+
+    //after login and signup phase
+    //login
+    const loginForm = document.getElementById('login-form');
+    loginForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(loginForm).entries()
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+
+        const result = await response.json();
+        console.log(result.res._id)
+        window.location.href = `/main.html?recruiterId=${result.res._id}`
+    });
+
+    const signupForm = document.getElementById('signup-form');
+    signupForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(signupForm).entries()
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+
+        const result = await response.json();
+        console.log(result.res._id)
+        window.location.href = `/main.html?recruiterId=${result.res._id}`
+    });
+
   </script>
+  <script src="login.js"></script>
 </html>

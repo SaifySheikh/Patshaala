@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Open+Sans:wght@400;700&family=Poppins:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="/Patshaala/public/main.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/normalize.css">
   </head>
   <body>
 
@@ -22,67 +24,32 @@
 
         <!-- Navigation bar -->
         <nav class="nav collapsible collapsible-expanded">
-          <a href="index.html"><img class="logo" src="images/TextLogo.svg" alt="Image of the websites logo" srcset=""></a>
+          <a href="main.html"><img class="logo" src="/logo.png" alt="Image of the websites logo"></a>
           <div class="toggle"><i class="fa-solid fa-bars-staggered"></i></div>
           <ul class="list nav-list collapsible-content">
-            <li class="nav-item current"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="index.html">Home</a></li>
             <li class="nav-item"><a href="links/about.html">About Us</a></li>
             <li class="nav-item"><a href="links/programs.html">Be a Tutor</a></li>
             <li class="nav-item"><a href="#streaks.html">
-              <img src="/Patshaala/assets/flame.png" class="streak" alt="">
+              <img src="/flame.png" class="streak" alt=""> Streak
             </a></li>
-            <li class="nav-item"><a href="links/features.html">Profile</a></li>
+            <li class="nav-item"><a href="links/features.html">
+              <img src="user.png" class="streak" alt="profile">
+            </a></li>
           </ul>
-          <a href="links/form.html" class="nav-button collapsible-content">
-            <button class="btn btn-accent btn-callout">Login</button>
-          </a>
         </nav>
         <div class="mainContainer">
-        <div>
+        <div class="leftSubMainContainer">
         <!-- Hero content area and banner-->
         <h1 class="hero-title">Pathshaala</h1>
         <!--Changes the image depending on the screen size-->
-        <svg class="icon icon--white satellite">
-          <use href="images/sprite.svg#satellite"></use>
-        </svg>
-        <svg class="icon icon--white craft">
-          <use href="images/sprite.svg#craft"></use>
-        </svg>
-        <picture>
-          <source media="(max-width: 768px)" srcset="images/hero-image.png">
-          <img class="banner-image" src="" alt="">
-        </picture>
-        <svg class="icon icon--white astroid">
-            <use href="images/sprite.svg#white-astroid"></use>
-        </svg>
-        <svg class="icon icon--white astronaut">
-          <use href="images/sprite.svg#astronaut"></use>
-        </svg>
+        
         <p class="hero-subtitle">
           <span >Aao Sath Padhe</span>
         </p>
-        <svg class="icon icon--white star">
-          <use href="images/sprite.svg#star"></use>
-        </svg>
-        <a href="links/form.html"><button class="btn btn-accent">Get Started</button></a>
-
-        <!-- Social media contacts-->
-        <ul class="hero-contacts">
-      <a href="#">
-        <li>Facebook</li>
-      </a>
-      <a href="#">
-        <li>Twitter</li>
-      </a>
-      <a href="#">
-        <li>LinkedIn</li>
-      </a>
-      <a href="#">
-        <li>WhatsApp</li>
-      </a>
-        </ul>
+      
       </div>
-      <img src="/Patshaala/assets/anim-1-1.gif" alt="">
+      <img src="/anim-1-1.gif" alt="">
     </div>
       </div>
       <!-- Curved decoration of the hero section -->
@@ -213,24 +180,128 @@
        <button class="button-85" role="button">Explore</button>
     </section>
 
-    
-
-    <!-- project section section -->
-    <section class="project_section">
-      <div class="wrap">
-        <div class="search-project">
-           <input type="text" class="searchTerm" placeholder="What are you looking for?">
-           <button type="submit" class="searchButton">
-             <i class="fa fa-search"></i>
-          </button>
+    <section class="web-content">
+      <div class="blocks container">
+        <h2>Why we consider ourselves the best</h2>
+        <div class="guarantee grid grid-1x2">
+          <img  src="images/Guarantee.svg" alt="">
+          <div class="guarantee-content">
+              <h3 class="quote"><span class="quote quote-text">You can only become truly accomplished at something you love</span> - Maya Angelou</h3>
+            <p>We love our work, and for that we provide you with the best services to keep you satisfied.</p>
+            <a href="links/guarentee.html"><button class="btn btn-accent">Learn More</button></a>
+          </div>
         </div>
-        <div class="trending-project">
-          <p>Cinemagic: The movie ticket booking app</p>
+      </div>
+    </section>
+
+    <!-- testimonial section -->
+    <section class="testimonial">
+      <div class="container">
+        <div class="title-sec">
+          <h2>Our Testimonial</h2>
+          <p>What clients say about us?</p>
+        </div>
+        <div class="testimonial-content owl-carousel">
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur, mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?</p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/man.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="single-testimonial">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore modi ut maxime quisquam quae, consequuntur,
+              mollitia, eius aliquam dolorem magnam itaque ratione quidem ea nemo reprehenderit tempora optio iusto perferendis?
+            </p>
+            <div class="client-info">
+              <div class="client-pic">
+                <a href="#">
+                  <img src="images/wall.jpg" alt="">
+                </a>
+              </div>
+              <div class="client-details">
+                <h6>Ronald Row</h6>
+                <span>Designer, LLC Team</span>
+              </div>
+            </div>
+          </div>
         </div>
      </div>
      <img src="/Patshaala/assets/project.webp" alt="">
     </section>
 
+    <!-- Callout section -->
+    <div class="callout callout-accent container">
+      <div class="grid grid-1x2">
+        <div class="callout-content">
+          <h2 class="callout-heading">Ready To Get Started?</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque in architecto saepe assumenda quod
+            magnam!</p>
+        </div>
+        <a href="links/form.html">
+          <button class="btn btn-callout btn-stretch">Get Started</button>
+        </a>
+      </div>
+    </div>
 
     <!-- footer section -->
     <footer class="blocks block-dark">
@@ -276,11 +347,9 @@
         <section class="footer-brand">
           
           <a href="#">
-            <img class="footer-image" src="images/code.png" alt="Logo of company">
+            <img class="footer-image" src="/logo.png" alt="Logo of company">
           </a>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum voluptas inventore laborum asperiores aperiam
-            placeat ab libero ducimus excepturi? Eius!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quasi id dicta, explicabo ab suscipit!</p>
+          <p>Pathshaala is a leading peer to peer study startup created by students of CSE 6B , RCOEM . It is revolutionary platform wherein student from across the country can learn enthusiastically.</p>
           <div class="contact-icons">
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
