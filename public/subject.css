@@ -1,0 +1,138 @@
+:root {
+    --dominant-color: #000000;
+    --secondary-color: #415263;
+    --complementary-color1:#20b7ba;
+    --complementary-color2:#39a7d5;
+    --complementary-color3:#2c75bc;
+    --accent-color: #712fc1;
+    --accent-hover: #5e12ba;
+    --black-color: #474747;
+    --white-text: #fff;
+    --white-text--hover: #d2d0db;
+}
+  .searchform {
+    background:#f4f4f4;
+    background:rgba(244,244,244,.79);
+    border: 1px solid #d3d3d3;
+    position: absolute;
+    width:50rem;
+    height: 4rem;
+    box-shadow:0 4px 9px rgba(0,0,0,.37);
+    -moz-box-shadow:0 4px 9px rgba(0,0,0,.37);
+    -webkit-box-shadow:0 4px 9px rgba(0,0,0,.37);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px
+  }
+  
+  .searchform input, .searchform button {
+      float: left
+  }
+  .searchform input {
+      background:#fefefe;
+      border: none;
+      font:17px/17px 'HelveticaNeue', Helvetica, Arial, sans-serif;
+      margin-right: 5px;
+      padding: 10px;
+      width: 70%;
+      height: 100%;
+      box-shadow: 0 0 4px rgba(0,0,0,.4) inset, 1px 1px 1px rgba(255,255,255,.75);
+      -moz-box-shadow: 0 0 4px rgba(0,0,0,.4) inset, 1px 1px 1px rgba(255,255,255,.75);
+      -webkit-box-shadow: 0 0 4px rgba(0,0,0,.4) inset, 1px 1px 1px rgba(255,255,255,.75);
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px
+  }
+      .searchform input:focus {
+          outline: none;
+          box-shadow:0 0 4px #600dbe inset;
+          -moz-box-shadow:0 0 4px #6e0dbe inset;
+          -webkit-box-shadow:0 0 4px #5a0dbe inset;
+      }
+      .searchform input::-webkit-input-placeholder {
+        font-style: italic;
+        line-height: 15px
+      }
+  
+      .searchform input:-moz-placeholder {
+        font-style: italic;
+        line-height: 15px
+      }
+  
+  .searchform button {
+     
+      background: rgb(138, 52, 236);
+      background: -moz-linear-gradient(top, var(--accent-color) 0%, var(--accent-hover) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--accent-color)), color-stop(100%,var(--accent-hover)));
+      background: -webkit-linear-gradient(top, var(--accent-color) 0%,var(--accent-hover) 100%);
+      background: -o-linear-gradient(top, var(--accent-color) 0%,var(--accent-hover) 100%);
+      background: -ms-linear-gradient(top, var(--accent-color) 0%,var(--accent-hover) 100%);
+      background: linear-gradient(to bottom, var(--accent-color) 0%,var(--accent-hover) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34adec', endColorstr='#2691dc',GradientType=0 );
+      border: none;
+      color:#fff;
+      cursor: pointer;
+      font: 16px/16px 'HelveticaNeue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      padding: 10px;
+      width:29%;
+      height: 100%;
+      box-shadow: 0 0 2px #2692dd inset;
+      -moz-box-shadow: 0 0 2px #2692dd inset;
+      -webkit-box-shadow: 0 0 2px #2692dd inset;
+    border-radius: 9px;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+  }
+      .searchform button:hover {
+          opacity:.9;
+      }
+
+.search-video-container{
+    margin-top: 13rem;
+}
+.search-video-container h2{
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+
+}
+.mainContainer img{
+    width: 500px;
+}
+
+
+/* Recent video */
+.recent_video{
+    padding: 5rem 10rem;
+}
+.recent_video video{
+    border-radius: 1rem;
+    width: 40rem;
+    height: 20rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+/* adiitoional */
+.additional{
+    padding: 10rem;
+    display: flex;
+    justify-content: space-around;
+}
+.additional-ele{
+    background-color: #ebdbff;
+    width: 35rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.additional-ele a{
+    
+}
+.additional-ele img{
+    width: 30%;
+}

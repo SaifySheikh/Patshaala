@@ -404,6 +404,61 @@ a {
   border-radius: 10px;
 }
 
+/* Project Section */
+.project_section{
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+.project_section img{
+    width: 40%;
+}
+.search-project {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #712fc1 ;
+    border-right: none;
+    padding: 5px;
+    height: 6rem;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 2rem;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #020202;
+  }
+  
+  .searchButton {
+    width: 70px;
+    height: 6rem;
+    border: 1px solid #712fc1;
+    background: #712fc1;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .trending-project{
+    margin: auto;
+    margin: 3rem;
+    padding: 1rem;
+    background-color: #dedede;
+    border-radius: 1rem;
+  }
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 70%;
+    padding: 10rem;
+  }
+
 /* Buttons */
 
 .btn {
