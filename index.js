@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(express.static("templates"));
 app.use(express.static("src"));
+app.use(express.static("assets"));
 
 mongoose.connect("mongodb+srv://SharifSheikh:Sharif2402@cluster0.82s5jhu.mongodb.net/student", {
   
@@ -35,6 +36,7 @@ mongoose.connect("mongodb+srv://SharifSheikh:Sharif2402@cluster0.82s5jhu.mongodb
     res.sendFile(__dirname + "/templates/login-signup.html");
   });
 
+//student login
 
 app.post("/register", async (req, res) => {
   try {
@@ -52,7 +54,9 @@ app.post("/register", async (req, res) => {
 
     const savedStudent = await newStudent.save();
 
-    res.json(savedStudent);
+    res.status(201).json({
+      res: savedStudent
+  });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -65,7 +69,9 @@ app.post("/login", async (req, res) => {
     const student = await Student.findOne({ email });
 
     if (student && await bcrypt.compare(password, student.password)) {
-      res.json({ message: "Login successful" });
+      res.status(201).json({
+        res: student
+    });
     } else {
       console.log("Invalid credentials");
       res.status(401).json({ error: "Invalid credentials" });

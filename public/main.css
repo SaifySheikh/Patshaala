@@ -34,6 +34,7 @@ body {
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-size: 2.5rem;
     line-height: 1.5;
+    margin: 0;
 }
 
 h2, h3 {
@@ -560,8 +561,8 @@ a {
     background-color: var(--dominant-color);
     border-radius: 15px;
     color: var(--white-text);
-    font-size: 1.6rem;
-    padding: 0.3rem 2rem;
+    font-size: 2.6rem;
+    padding: 1rem 5rem;
 }
 
 .block-dark .tag-title {
@@ -1213,7 +1214,7 @@ footer.blocks {
     /* Navbar */
 
     .nav {
-        margin-bottom: 5rem;
+        margin-bottom: 1rem;
     }
 
     .toggle {
@@ -1303,4 +1304,11 @@ footer.blocks {
     .container {
         max-width: 1680px;
     }
+}
+
+
+/* main page */
+.leftSubMainContainer{
+    padding: 2rem;
+    margin-top: 10rem;
 }
