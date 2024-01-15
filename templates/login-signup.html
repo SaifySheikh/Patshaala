@@ -4,32 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="/public/login.css">
+    <link rel="stylesheet" href="/login.css">
   </head>
   <body>
     <h2>Patshaala</h2>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="#">
-          <h1>Create Account</h1>
-          <span> use your email for registration</span>
-          <input type="text" placeholder="Username" />
-          <input type="email" placeholder="Email" />
-          <input type="number" placeholder="phone Number">
-          <input type="text" placeholder="college name">
-          <input type="password" placeholder="Password"/>
-          <button>Sign Up</button>
+        <form action="/register" method="POST">
+          <h1>Sign up</h1>
+          <input type="text" name="username" placeholder="Username" />
+          <input type="email" name="email" placeholder="Email" />
+          <input type="number" name="phone" placeholder="Phone Number" />
+          <input type="text" name="college" placeholder="College Name" />
+          <input type="password" name="password" placeholder="Password" />
+          <button type="submit">Sign Up</button>
+       </form>       
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="#">
-          <h1>Sign in</h1>
-          <span> use your account</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
-        </form>
+        <form action="/login" method="POST">
+          <input type="email" placeholder="Email" name="email" />
+          <input type="password" placeholder="Password" name="password" />
+          <button type="submit">Sign In</button>
+       </form>
+              
       </div>
       <div class="overlay-container">
         <div class="overlay">
