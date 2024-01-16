@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Patshaala/public/main.css">
+    <link rel="stylesheet" href="/Patshaala/public/tutor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- Hero section to introduce the website  -->
+    <section class="blocks block-gradient curve">
+        <div class="hero-content container">
+  
+          <!-- Navigation bar -->
+          <nav class="nav collapsible collapsible-expanded">
+            <a href="main.html"><img class="logo" src="/logo.png" alt="Image of the websites logo"></a>
+            <div class="toggle"><i class="fa-solid fa-bars-staggered"></i></div>
+            <ul class="list nav-list collapsible-content">
+              <li class="nav-item"><a href="index.html">Home</a></li>
+              <li class="nav-item"><a href="links/about.html">About Us</a></li>
+              <li class="nav-item"><a href="links/programs.html">Be a Student</a></li>
+              <li class="nav-item"><a href="#streaks.html">
+                <img src="/flame.png" class="streak" alt=""> Streak
+              </a></li>
+              <li class="nav-item"><a href="links/features.html">
+                <img src="user.png" class="streak" alt="profile">
+              </a></li>
+            </ul>
+          </nav>
+          <div class="mainContainer">
+          <div class="leftSubMainContainer">
+          <!-- Hero content area and banner-->
+          <h1 class="hero-title">Pathshaala</h1>
+          <!--Changes the image depending on the screen size-->
+          
+          <p class="hero-subtitle">
+            <span class="tutor-name">Hello Tutor.....</span>
+          </p>
+
+          <button class="button-30" role="button">Upload Notes</button>
+          <button class="button-30" role="button">Upload PYQ's</button>
+          <a href="https://meet.google.com/" target="_blank"><button class="button-30" role="button">Take Online Session</button></a>
+          <div class="link-upload">
+            <form class="link-form" onsubmit="event.preventDefault();" role="search">
+                <label for="search">link</label>
+                <input id="search" type="search" placeholder="Upload Session link..." autofocus required />
+                <button type="submit">Go</button>    
+              </form>
+          </div>
+          <div class="rating">
+            <div>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </div>
+            <p>Rating 3/5</p>
+          </div>
+   
+        
+        </div>
+        <img src="/Patshaala/assets/tutor.gif" alt="">
+      </div>
+        </div>
+        <!-- Curved decoration of the hero section -->
+        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+          <path fill="#fff" fill-opacity="1"
+            d="M0,128L60,154.7C120,181,240,235,360,224C480,213,600,139,720,128C840,117,960,171,1080,165.3C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+          </path>
+        </svg>
+      </section>
+
+      <!-- Uploaded video section -->
+      <section class="upload-video">
+        <h2>Your Uploaded videos</h2>
+        <div class="videos">
+            <div class="video-ele">
+                <h6>Introduction to DSA
+                </h6>
+                <video controls="controls">
+                    <source src="/Patshaala/assets/tutoeVid2.mp4" type="video/mp4" />
+                   </video>
+            </div>
+            <div class="video-ele">
+                <h6>Linked list
+                </h6>
+                <video controls="controls">
+                    <source src="/Patshaala/assets/tutorVid1.mp4" type="video/mp4" />
+                   </video>
+            </div>
+        </div>
+      </section>
+
+
+       <!-- footer section -->
+    <footer class="blocks block-dark">
+        <div class="container grid footer-sections">
+      
+          <!--Footer contact us-->
+          <section class="footer-contact">
+            <h2 id="contact" class="footer-title">Contact us</h2>
+            <input class="footer-input" type="text" placeholder="Enter Your Name">
+            <input class="footer-input" type="email" placeholder="Enter Your Email Address">
+            <textarea class="footer-input" cols="10" rows="5" placeholder="Write Your Message..."></textarea>
+            <a href="#"><button class="btn btn-contact btn-block">Send</button></a>
+          </section>
+      
+          <!--Footer links-->
+          <section class="footer-links">
+            <ul class="list list-footer">
+              <a href="#">
+                <li>Terms & Conditions</li>
+              </a>
+              <a href="#">
+                <li>Developers</li>
+              </a>
+              <a href="#">
+                <li>Company</li>
+              </a>
+              <a href="#">
+                <li>Security</li>
+              </a>
+              <a href="#">
+                <li>Support</li>
+              </a>
+              <a href="#">
+                <li>Legal</li>
+              </a>
+              <a href="#">
+                <li>App</li>
+              </a>
+            </ul>
+          </section>
+      
+          <!--Footer developer brand-->
+          <section class="footer-brand">
+            
+            <a href="#">
+              <img class="footer-image" src="/logo.png" alt="Logo of company">
+            </a>
+            <p>Pathshaala is a leading peer to peer study startup created by students of CSE 6B , RCOEM . It is revolutionary platform wherein student from across the country can learn enthusiastically.</p>
+            <div class="contact-icons">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+              <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+          </section>
+        </div>
+        <section>
+          <p class="copyright">All rights reserved by <b>Govan Studio</b> 2023 (Pty) Ltd</p>
+        </section>
+      </footer>
+</body>
+</html>
