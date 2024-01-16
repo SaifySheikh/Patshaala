@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum</title>
+    <link rel="stylesheet" href="/subject.css">
+    <link rel="stylesheet" href="/main.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        #header {
+            width: 100%;
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+        #header h1{
+            font-size: 2rem;
+        }
+
+        #chat-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+            max-height: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 12px;
+            background-color: #3498db;
+            color: #fff;
+            animation: fadeIn 0.5s ease;
+            font-size: 1rem;
+        }
+
+        #input-box {
+            display: flex;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+
+        #message-input {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #3498db;
+            border-radius: 8px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        #send-button {
+            padding: 15px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            outline: none;
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Discussion Forum</h1>
+    </div>
+    <div id="chat-container">
+        <ul id="messages"></ul>
+        <div id="input-box">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <footer class="blocks block-dark" style="margin-top: 2rem;">
+        <div class="container grid footer-sections">
+      
+          <!--Footer contact us-->
+          <section class="footer-contact">
+            <h2 id="contact" class="footer-title">Contact us</h2>
+            <input class="footer-input" type="text" placeholder="Enter Your Name">
+            <input class="footer-input" type="email" placeholder="Enter Your Email Address">
+            <textarea class="footer-input" cols="10" rows="5" placeholder="Write Your Message..."></textarea>
+            <a href="#"><button class="btn btn-contact btn-block">Send</button></a>
+          </section>
+      
+          <!--Footer links-->
+          <section class="footer-links">
+            <ul class="list list-footer">
+              <a href="#">
+                <li>Terms & Conditions</li>
+              </a>
+              <a href="#">
+                <li>Developers</li>
+              </a>
+              <a href="#">
+                <li>Company</li>
+              </a>
+              <a href="#">
+                <li>Security</li>
+              </a>
+              <a href="#">
+                <li>Support</li>
+              </a>
+              <a href="#">
+                <li>Legal</li>
+              </a>
+              <a href="#">
+                <li>App</li>
+              </a>
+            </ul>
+          </section>
+      
+          <!--Footer developer brand-->
+          <section class="footer-brand">
+            
+            <a href="#">
+              <img class="footer-image" src="/logo.png" alt="Logo of company">
+            </a>
+            <p>Pathshaala is a leading peer to peer study startup created by students of CSE 6B , RCOEM . It is revolutionary platform wherein student from across the country can learn enthusiastically.</p>
+            <div class="contact-icons">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#"><i class="fa-solid fa-phone"></i></a>
+              <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+          </section>
+        </div>
+        <section>
+          <p class="copyright">All rights reserved by <b>Govan Studio</b> 2023 (Pty) Ltd</p>
+        </section>
+      </footer>
+
+    <script>
+        const searchParams = new URLSearchParams(window.location.search);
+        async function sendMessage() {
+            //upload message
+            const messageInput = document.getElementById('message-input');
+            const message = messageInput.value.trim();
+            data = {
+                message : message
+            }
+            const response = await fetch('/discussion', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            console.log(result)
+            messageInput.value = '';
+            window.location.reload();
+            //end
+            
+        }
+        async function LoadDiscussion(){
+            const response = await fetch(`/get-discussion`);
+            const discussions = await response.json();
+            const messagesContainer = document.getElementById('messages');
+            for(let i=0;i<discussions.length;i++){
+                const li = document.createElement('li');
+                li.className = 'message';
+                li.textContent = discussions[i].message
+                messagesContainer.insertBefore(li, messagesContainer.firstChild);
+            }
+        }
+        LoadDiscussion();
+    </script>
+</body>
+</html>

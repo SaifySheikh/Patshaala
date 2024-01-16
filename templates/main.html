@@ -29,7 +29,7 @@
           <ul class="list nav-list collapsible-content">
             <li class="nav-item"><a href="index.html">Home</a></li>
             <li class="nav-item"><a href="links/about.html">About Us</a></li>
-            <li class="nav-item"><a href="links/programs.html">Be a Tutor</a></li>
+            <li class="nav-item"><a onclick="redirectToNextPage()">Be a Tutor</a></li>
             <li class="nav-item"><a href="#streaks.html">
               <img src="/flame.png" class="streak" alt=""> Streak
             </a></li>
@@ -62,7 +62,7 @@
     <!-- Search Section-->
     <section class="web-content search-section">
       <div class="search">
-        <input type="text" placeholder="search" />
+        <input type="text" id="subject" placeholder="search" />
         <div class="symbol">
           <svg class="cloud">
             <use xlink:href="#cloud" />
@@ -259,6 +259,30 @@
     </footer>
 
     <!-- JavaScript files and links -->
+    <!-- search section -->
+    <script>
+      const searchParams = new URLSearchParams(window.location.search);
+      const searchBox = document.getElementById('subject');
+      searchBox.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const subjectName = searchBox.value;
+        console.log(subjectName);
+        if(subjectName.trim().length === 0){
+          alert('Invalid subject Name');
+        }else{
+          window.location.href = `/subject.html?recruiterId=${searchParams.get('recruiterId')}&subject=${subjectName}`
+        }
+      }
+    });
+
+    //goto tutor
+    function redirectToNextPage() {
+            const currentParams = new URLSearchParams(window.location.search);
+            const nextPageUrl = `tutor-process.html?recruiterId=${currentParams.get('recruiterId')}`;
+            window.location.href = nextPageUrl;
+}
+    </script>
     <script>
   $('.features').owlCarousel({
     margin:30,

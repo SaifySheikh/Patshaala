@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Patshaala/public/main.css">
-    <link rel="stylesheet" href="/Patshaala/public/tutor.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/tutor.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Document</title>
@@ -21,7 +21,7 @@
             <ul class="list nav-list collapsible-content">
               <li class="nav-item"><a href="index.html">Home</a></li>
               <li class="nav-item"><a href="links/about.html">About Us</a></li>
-              <li class="nav-item"><a href="links/programs.html">Be a Student</a></li>
+              <li class="nav-item"><a href="/login-signup.html">Be a Student</a></li>
               <li class="nav-item"><a href="#streaks.html">
                 <img src="/flame.png" class="streak" alt=""> Streak
               </a></li>
@@ -40,7 +40,7 @@
             <span class="tutor-name">Hello Tutor.....</span>
           </p>
 
-          <button class="button-30" role="button">Upload Notes</button>
+          <button class="button-30" onclick="handleFileUpload()" role="button">Upload Notes</button>
           <button class="button-30" role="button">Upload PYQ's</button>
           <a href="https://meet.google.com/" target="_blank"><button class="button-30" role="button">Take Online Session</button></a>
           <div class="link-upload">
@@ -63,7 +63,7 @@
    
         
         </div>
-        <img src="/Patshaala/assets/tutor.gif" alt="">
+        <img src="/tutor.gif" alt="">
       </div>
         </div>
         <!-- Curved decoration of the hero section -->
@@ -82,14 +82,14 @@
                 <h6>Introduction to DSA
                 </h6>
                 <video controls="controls">
-                    <source src="/Patshaala/assets/tutoeVid2.mp4" type="video/mp4" />
+                    <source src="/tutoeVid2.mp4" type="video/mp4" />
                    </video>
             </div>
             <div class="video-ele">
                 <h6>Linked list
                 </h6>
                 <video controls="controls">
-                    <source src="/Patshaala/assets/tutorVid1.mp4" type="video/mp4" />
+                    <source src="/tutorVid1.mp4" type="video/mp4" />
                    </video>
             </div>
         </div>
@@ -158,4 +158,10 @@
         </section>
       </footer>
 </body>
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+  function handleFileUpload(){
+    window.location.href = `/video-upload.html?recruiterId=${searchParams.get('recruiterId')}`
+  } 
+</script>
 </html>
