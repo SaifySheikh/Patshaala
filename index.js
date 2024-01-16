@@ -11,7 +11,8 @@ const port = 3000;
 
 const Student = require("./model/student");
 const Discussion = require("./model/discussion")
-const Meet = require("./model/meet")
+const Meet = require("./model/meet");
+const studentModel = require("./model/student");
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -147,6 +148,19 @@ app.post("/discussion",async(req,res) => {
 });
 
 //student login
+
+app.get("/getStudent/:id",async(req,res) => {
+  const recruiterId = req.params.id;
+  try{
+    const recruiter = await studentModel.findById(recruiterId);
+    res.status(200).json({
+      studentInfo : recruiter
+    });
+  }catch(error){
+    console.error(error);
+      res.status(500).json({ error: "Something went wrong" });
+  }
+})
 
 
 app.post("/register", async (req, res) => {

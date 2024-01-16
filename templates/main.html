@@ -31,7 +31,7 @@
             <li class="nav-item"><a href="/developer.html">About Us</a></li>
             <li class="nav-item"><a onclick="redirectToNextPage()">Be a Tutor</a></li>
             <li class="nav-item"><a href="/meet.html">Meets</a></li>
-            <li class="nav-item"><a href="links/features.html">
+            <li class="nav-item"><a onclick="redirectProfile()">
               <img src="user.png" class="streak" alt="profile">
             </a></li>
           </ul>
@@ -280,6 +280,13 @@
             const nextPageUrl = `tutor-process.html?recruiterId=${currentParams.get('recruiterId')}`;
             window.location.href = nextPageUrl;
 }
+
+  //goto profile
+  function redirectProfile(){
+            const currentParams = new URLSearchParams(window.location.search);
+            const nextPageUrl = `profile.html?recruiterId=${currentParams.get('recruiterId')}`;
+            window.location.href = nextPageUrl;
+  }
     </script>
     <script>
   $('.features').owlCarousel({

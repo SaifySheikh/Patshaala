@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/main.css">
-    <link rel="stylesheet" href="/public/profile.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/profile.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,31 +14,25 @@
   
           <!-- Navigation bar -->
           <nav class="nav collapsible collapsible-expanded">
-            <a href="index.html"><img class="logo" src="images/TextLogo.svg" alt="Image of the websites logo" srcset=""></a>
+            <a href="index.html"><img class="logo" src="/logo.png" alt="Image of the websites logo" srcset=""></a>
             <div class="toggle"><i class="fa-solid fa-bars-staggered"></i></div>
             <ul class="list nav-list collapsible-content">
               <li class="nav-item current"><a href="index.html">Home</a></li>
-              <li class="nav-item"><a href="links/about.html">About Us</a></li>
-              <li class="nav-item"><a href="links/programs.html">Be a Tutor</a></li>
-              <li class="nav-item"><a href="#streaks.html">
-                <img src="/Patshaala/assets/flame.png" class="streak" alt="">
-              </a></li>
-              <li class="nav-item"><a href="links/features.html">Profile</a></li>
+              <li class="nav-item"><a href="/developer.html">About Us</a></li>
+              <li class="nav-item"><a href="/tutor-process.html">Be a Tutor</a></li>
+              <li class="nav-item"><a href="/meet.html">Meets</a></li>
             </ul>
-            <a href="links/form.html" class="nav-button collapsible-content">
-              <button class="btn btn-accent btn-callout">Login</button>
-            </a>
           </nav>
           <div class="mainContainer">
             <div class="card-container">
-                <img class="round" src="/assets/user.jpeg" alt="user" />
-                <h3>Username</h3>
+                <img class="round" src="/user.jpeg" alt="user" />
+                <h3 id='username'></h3>
                 <h6></h6>
-                <p>user@email.com</p>
+                <p id="email"></p>
                 
                 <div class="skills">
                     <h6>College</h6>
-                    <p>Shri Ramdeobaba College of Engg. and Management, Nagpur</p>
+                    <p id="college"></p>
                 </div>
             </div>
       </div>
@@ -53,4 +47,15 @@
 
 
 </body>
+<script>
+  const currentParams = new URLSearchParams(window.location.search);
+  async function LoadRecruiterData(){
+    const response = await fetch(`/getStudent/${currentParams.get('recruiterId')}`);
+    const recruiterData = await response.json();
+    document.getElementById('username').innerHTML = recruiterData.studentInfo.username
+    document.getElementById('email').innerHTML = recruiterData.studentInfo.email
+    document.getElementById('college').innerHTML = recruiterData.studentInfo.college
+  }
+  LoadRecruiterData();
+</script>
 </html>
