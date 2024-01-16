@@ -308,9 +308,9 @@ a {
 }
 
 .logo {
-    width: 10rem;
     display: flex;
     align-items: center;
+    width: 20rem;
 }
 
 .collapsible-content {
