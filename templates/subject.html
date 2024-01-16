@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Patshaala/public/main.css">
-    <link rel="stylesheet" href="/Patshaala/public/subject.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/subject.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,30 +14,31 @@
   
           <!-- Navigation bar -->
           <nav class="nav collapsible collapsible-expanded">
-            <a href="index.html"><img class="logo" src="images/TextLogo.svg" alt="Image of the websites logo" srcset=""></a>
+            <a href="/index.html"><img class="logo" src="/logo.png" alt="Image of the websites logo" srcset=""></a>
             <div class="toggle"><i class="fa-solid fa-bars-staggered"></i></div>
             <ul class="list nav-list collapsible-content">
               <li class="nav-item current"><a href="index.html">Home</a></li>
               <li class="nav-item"><a href="links/about.html">About Us</a></li>
-              <li class="nav-item"><a href="links/programs.html">Be a Tutor</a></li>
+              <li class="nav-item"><a  onclick="redirectToNextPage()">Be a Tutor</a></li>
+              <li class="nav-item"><a href="/discussion.html">Discussion</a></li>
               <li class="nav-item"><a href="#streaks.html">
-                <img src="/Patshaala/assets/flame.png" class="streak" alt="">
+                <img src="/flame.png" class="streak" alt="">
               </a></li>
               <li class="nav-item"><a href="links/features.html">Profile</a></li>
             </ul>
-            <a href="links/form.html" class="nav-button collapsible-content">
-              <button class="btn btn-accent btn-callout">Login</button>
-            </a>
           </nav>
           <div class="mainContainer">
           <div class="search-video-container">
           <h2>Search video lecture of specific topic...</h2>
-          <form class="searchform cf">
-            <input type="text" placeholder="Is it me you’re looking for?">
+          <form id="topic-form" onsubmit="handleSubmit(event)" class="searchform cf">
+            <input type="text" id="topic-name" placeholder="Is it me you’re looking for?">
             <button type="submit">Search</button>
           </form>
         </div>
-        <img src="/Patshaala/assets/teaching.gif" alt="">
+        <img src="/teaching.gif" id="teaching-gif" alt="">
+        <iframe id="subject-video" width="420" height="250"
+        src="/os.mp4">
+        </iframe>
       </div>
         </div>
         <!-- Curved decoration of the hero section -->
@@ -51,34 +52,121 @@
       <section class="recent_video">
             <h2>Recent</h2>
             <video controls="controls">
-                <source src="/Patshaala/assets/demo.mp4" type="video/mp4" />
+                <source src="/demo.mp4" type="video/mp4" />
                </video>
                <video controls="controls">
-                <source src="/Patshaala/assets/demo2.mp4" type="video/mp4" />
+                <source src="/demo2.mp4" type="video/mp4" />
                </video>
       </section>
       <section class="additional">
         <a href="quiz.html">
         <div class="additional-ele">
-                  <img src="/Patshaala/assets/quiz.png" alt="">
+                  <img src="/quiz.png" alt="">
                   <h3>Quiz</h3>
                   <p>Solve topic wise quiz </p>
         </div>
     </a>
     <a href="pyq.html">
         <div class="additional-ele">
-            <img src="/Patshaala/assets/paper.png" alt="">
+            <img src="/paper.png" alt="">
             <h3>PYQ's</h3>
             <p>Access all most important questions</p>
   </div>
 </a>
 <a href="discussion.html">
   <div class="additional-ele">
-    <img src="/Patshaala/assets/conversation.png" alt="">
+    <img src="/conversation.png" alt="">
     <h3>Discussion</h3>
     <p>Discuss your queries with peers</p>
 </div>
 </a>
       </section>
+
+<!-- footer -->
+<footer class="blocks block-dark">
+  <div class="container grid footer-sections">
+
+    <!--Footer contact us-->
+    <section class="footer-contact">
+      <h2 id="contact" class="footer-title">Contact us</h2>
+      <input class="footer-input" type="text" placeholder="Enter Your Name">
+      <input class="footer-input" type="email" placeholder="Enter Your Email Address">
+      <textarea class="footer-input" cols="10" rows="5" placeholder="Write Your Message..."></textarea>
+      <a href="#"><button class="btn btn-contact btn-block">Send</button></a>
+    </section>
+
+    <!--Footer links-->
+    <section class="footer-links">
+      <ul class="list list-footer">
+        <a href="#">
+          <li>Terms & Conditions</li>
+        </a>
+        <a href="#">
+          <li>Developers</li>
+        </a>
+        <a href="#">
+          <li>Company</li>
+        </a>
+        <a href="#">
+          <li>Security</li>
+        </a>
+        <a href="#">
+          <li>Support</li>
+        </a>
+        <a href="#">
+          <li>Legal</li>
+        </a>
+        <a href="#">
+          <li>App</li>
+        </a>
+      </ul>
+    </section>
+
+    <!--Footer developer brand-->
+    <section class="footer-brand">
+      
+      <a href="#">
+        <img class="footer-image" src="/logo.png" alt="Logo of company">
+      </a>
+      <p>Pathshaala is a leading peer to peer study startup created by students of CSE 6B , RCOEM . It is revolutionary platform wherein student from across the country can learn enthusiastically.</p>
+      <div class="contact-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        <a href="#"><i class="fa-solid fa-phone"></i></a>
+        <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+      </div>
+    </section>
+  </div>
+  <section>
+    <p class="copyright">All rights reserved by <b>Govan Studio</b> 2023 (Pty) Ltd</p>
+  </section>
+</footer>
 </body>
+
+<script>
+  function handleSubmit(event){
+    event.preventDefault();
+    const topicName = document.getElementById('topic-name').value;
+    console.log(topicName);
+    if(topicName.trim().length === 0){
+      alert('Invalid topic');
+    }else{
+      console.log('success');
+      const teachingGif = document.getElementById('teaching-gif');
+      const subjectVideo = document.getElementById('subject-video');
+      teachingGif.style.display = 'none';
+      subjectVideo.style.display = 'block';
+    }
+  }
+
+  //redirect to tutor process
+  function redirectToNextPage() {
+            const currentParams = new URLSearchParams(window.location.search);
+            const nextPageUrl = `tutor-process.html?recruiterId=${currentParams.get('recruiterId')}`;
+            window.location.href = nextPageUrl;
+}
+</script>
+
 </html>

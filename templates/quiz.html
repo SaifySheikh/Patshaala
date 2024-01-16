@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>patshaala Quiz.</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <div id="home" class="flex-center flex-column">
+        <h1>Quick Quiz</h1>
+        <a onclick="redirectToNextPage()" class="btn">Play</a>
+        <button style="background-color: #966fc6; color: white;" class="btn">High Scores</button>
+    </div>
+</div>
+</body>
+<script>
+    function redirectToNextPage() {
+            const currentParams = new URLSearchParams(window.location.search);
+            const nextPageUrl = `game.html?recruiterId=${currentParams.get('recruiterId')}`;
+            window.location.href = nextPageUrl;
+}
+</script>
+</html>
