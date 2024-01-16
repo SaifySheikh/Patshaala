@@ -20,10 +20,7 @@
               <li class="nav-item current"><a href="index.html">Home</a></li>
               <li class="nav-item"><a href="links/about.html">About Us</a></li>
               <li class="nav-item"><a  onclick="redirectToNextPage()">Be a Tutor</a></li>
-              <li class="nav-item"><a href="/discussion.html">Discussion</a></li>
-              <li class="nav-item"><a href="#streaks.html">
-                <img src="/flame.png" class="streak" alt="">
-              </a></li>
+              <li class="nav-item"><a href="meet.html">Meets</a></li>
               <li class="nav-item"><a href="links/features.html">Profile</a></li>
             </ul>
           </nav>
@@ -59,7 +56,7 @@
                </video>
       </section>
       <section class="additional">
-        <a href="quiz.html">
+        <a onclick="redirectQuiz()">
         <div class="additional-ele">
                   <img src="/quiz.png" alt="">
                   <h3>Quiz</h3>
@@ -165,6 +162,11 @@
   function redirectToNextPage() {
             const currentParams = new URLSearchParams(window.location.search);
             const nextPageUrl = `tutor-process.html?recruiterId=${currentParams.get('recruiterId')}`;
+            window.location.href = nextPageUrl;
+}
+function redirectQuiz(){
+            const currentParams = new URLSearchParams(window.location.search);
+            const nextPageUrl = `quiz.html?recruiterId=${currentParams.get('recruiterId')}`;
             window.location.href = nextPageUrl;
 }
 </script>

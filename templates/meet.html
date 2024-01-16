@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ongoing Google Meets</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .meet-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction:column;
+            justify-content: center;
+        }
+
+        .meet-link {
+            display: block;
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .meet-link:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ongoing Google Meets</h1>
+
+    <div class="meet-container" id="meet-contain">
+        <!-- Add more links as needed -->
+    </div>
+
+</body>
+<script>
+    async function LoadMeet(){
+            const response = await fetch(`/getMeets`);
+            const meets = await response.json();
+            const meetContainer = document.getElementById('meet-contain');
+            for(let i=0;i<meets.length;i++){
+                const a = document.createElement('a');
+                a.className = 'meet-link';
+                a.textContent = 'Meet '+(i+1)
+                a.href = meets[i].url
+                meetContainer.insertBefore(a, meetContainer.firstChild);
+            }
+        }
+        LoadMeet();
+</script>
+</html>

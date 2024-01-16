@@ -11,6 +11,7 @@ const port = 3000;
 
 const Student = require("./model/student");
 const Discussion = require("./model/discussion")
+const Meet = require("./model/meet")
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -39,6 +40,33 @@ mongoose.connect("mongodb+srv://SharifSheikh:Sharif2402@cluster0.82s5jhu.mongodb
     res.sendFile(__dirname + "/templates/login-signup.html");
   });
 
+
+//google meet 
+
+app.get('/getMeets',async function(req,res){
+  try{
+    const meets = await Meet.find();
+    res.json(meets);
+  }catch(error){
+    console.log('error')
+  }
+})
+
+
+app.post('/upload-meet-link',async function(req,res){
+  try{
+    const url = req.body.link
+    const newMeet = new Meet({
+      url:url
+    });
+    const newmeet = await newMeet.save();
+    res.status(201).json({
+      res: newmeet
+  });
+  }catch(error){
+    console.log('error');
+  }
+})
 
 //tutor registration
 app.post('/upload-notes-link',async function(req,res){

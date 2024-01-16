@@ -44,10 +44,9 @@
           <button class="button-30" role="button">Upload PYQ's</button>
           <a href="https://meet.google.com/" target="_blank"><button class="button-30" role="button">Take Online Session</button></a>
           <div class="link-upload">
-            <form class="link-form" onsubmit="event.preventDefault();" role="search">
+            <form class="link-form"  role="search">
                 <label for="search">link</label>
-                <input id="search" type="search" placeholder="Upload Session link..." autofocus required />
-                <button type="submit">Go</button>    
+                <input id="linkForm" id="search" name="link" type="search" placeholder="Upload Session link..." />
               </form>
           </div>
           <div class="rating">
@@ -163,5 +162,26 @@
   function handleFileUpload(){
     window.location.href = `/video-upload.html?recruiterId=${searchParams.get('recruiterId')}`
   } 
+  const linkBox = document.getElementById('linkForm');
+  linkBox.addEventListener('keydown', async (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const link = document.getElementById('linkForm').value;
+        console.log(link);
+        if(link.trim().length === 0){
+          alert('Invalid subject Name');
+        }else{
+          data = {
+            link : link
+          }
+          const response = await fetch('/upload-meet-link', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+          document.getElementById('linkForm').value = '';
+        }
+      }
+    });
 </script>
 </html>
